@@ -10,8 +10,8 @@ public class Diamond {
     diamondSize = scan.nextInt();
     middle = diamondSize / 2;
 
-    if (diamondSize % 2 == 1){ //is diamond odd?
-//top half of odd diamond, works!
+    if (diamondSize % 2 == 1){
+
       for (int i = 0; i <= middle; i++){
         for (int j = 0; j < middle - i; j++){
           System.out.print(" ");
@@ -21,7 +21,6 @@ public class Diamond {
         }
         System.out.println();
       }
-//bottom half of odd diamond, works!
       for(int i = middle - 1; i >= 0; i--){
         for (int j = middle - i; j > 0; j--){
           System.out.print(" ");
@@ -33,7 +32,6 @@ public class Diamond {
       }
     }
 
-//top half of even diamond, works!
     else{
       for(int i = 1; i <= middle + 1; i++){
         stars = (i==1) ? 1 : 2 * (i - 1);
@@ -47,15 +45,14 @@ public class Diamond {
         }
         System.out.println();
       }
-//bottom half of even diamond, works!
-      for (int i = middle; i >= 1; i--){ //i.e. n=6, i=3, repeats 3x
-        stars = (i==1) ? 1 : 2 * (i - 1); //s=4
-        leadingSpaces = diamondSize - stars;//l=2
+      for (int i = middle; i >= 1; i--){
+        stars = (i==1) ? 1 : 2 * (i - 1);
+        leadingSpaces = diamondSize - stars;
 
-        for (int j = 0; j < leadingSpaces; j++){ //j=0,l=4, runs 4x
+        for (int j = 0; j < leadingSpaces; j++){
           System.out.print(" ");
         }
-        for (int k = 1; k <= stars; k++){ //k=1, s=4, runs 4x
+        for (int k = 1; k <= stars; k++){
           System.out.print("* ");
         }
         System.out.println();
